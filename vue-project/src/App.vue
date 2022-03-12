@@ -12,7 +12,12 @@ export default {
     return{
       valid: false
     }
-  }
+  },
+  methods: {
+    onUpdate(data) {
+      
+    }
+  },
   
 }
 </script>
@@ -24,10 +29,15 @@ export default {
 <c-input
 name="الاسم"
 type="text"
+:rules="{required: true, min: 6}"
+@onUpdate="onUpdate"
+
 />
 <c-input
 name="كلمة المرور"
 type="password"
+:rules="{required: true, min: 8}"
+@onUpdate="onUpdate"
 />
  <c-button 
 text="تسجيل"
